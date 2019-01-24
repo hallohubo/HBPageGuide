@@ -60,7 +60,6 @@
     removeBtn.hidden = (self.imageArray.count != 1);
     removeBtn.tag = RemoveBtn_tag;      //注意这里的tag
     
-    //***********************这里面可以自定义*******************************//
     CGFloat btnW = 128;
     CGFloat btnH = 35;
     CGFloat btnX = CGRectGetMidX(self.view.frame) - btnW / 2;
@@ -87,7 +86,7 @@
     //启动判断
     NSString* versoin = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     NSString* versionCache = [[NSUserDefaults standardUserDefaults] objectForKey:FIRST_IN_KEY];
-    if (![versoin isEqualToString:versionCache]) {
+    if ([versoin isEqualToString:versionCache]) {
         return;
     }
     //以下代码只在程序安装初次运行时候执行
